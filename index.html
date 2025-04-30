@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script.js"></script>
+    <script src="./script.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./assets/atm.svg" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="./style.css" href="style.css">
     <title>Cajero Automatico</title>
 </head>
 <body class="container">
-    <header>
+    <header class="mb-3">
         <nav class="navbar bg-info">
             <div class="container-fluid  justify-content-center">
                 <a class="navbar-brand text-light" href="#">
@@ -23,36 +23,60 @@
             </div>
         </nav>
     </header>
-    <main class="d-flex flex-row ">
-        <nav class="d-flex flex-column mb-3 align-items-end">
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-        </nav>
+    <main>
         <article class="container">
-            <h1>Bienvenido a la banca mexicana </h1>
-            <h1>por favor  seleccione su cuenta en el siguiente apartado</h1>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+            <h1 class="d-flex justify-content-center">Bienvenido a la banca mexicana </h1>
+            <h1 class="d-flex justify-content-center mb-3"><P></P>Ingrese su cuenta en el siguiente apartado</h1>
+            <div id="box" class="d-flex justify-content-center">
+                <form class="row g-3" id="login">
+                    <div class="col-auto">
+                        <label for="username" class="visually-hidden">Nombre de usuario</label>
+                        <input type="text" class="form-control-plaintext" id="username" placeholder="Nombre de usuario">
+                    </div>
+                    <div class="col-auto">
+                        <label for="password" class="visually-hidden">Contraseña</label>
+                        <input type="password" class="form-control" id="password" placeholder="contraseña">
+                    </div>
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-primary mb-3" id="start">Iniciar sesion</button>
+                    </div>
+                </form>
+            </div>
+            <div id="login-message">
             </div>
         </article>
-        <nav class="d-flex flex-column">
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-            <button type="button" class="btn btn-secondary">Secondary</button>
-        </nav>
+        <article id="process">
+            <div id="account">
+            </div>
+            <div id="manage">
+                <button id="inBalance" class="btn btn-secondary">Ingreso a cuenta</button>
+                <button id="outBalance" class="btn btn-secondary">Retiro de dinero</button>
+            </div>
+            <div id="in">
+                <form>
+                    <label for="text">Su total a ingresar</label>
+                    <input type="text" id="inm"></input>
+                    <button class="btn btn-info">Aceptar</button>
+                </form>
+            </div>
+            <div>
+                <form id="out">
+                    <label for="text">Su total a retirar</label>
+                    <input type="text" id="outm"></input>
+                    <button class="btn btn-info">Aceptar</button>
+                </form>
+            </div>
+        </article>
+        <article id="lastBox">
+            <div id="result">
+            </div>
+            <div id="again">
+                <button class="btn btn-success">Realizar otra operacion</button>
+            </div>
+        </article>
     </main>
-    <footer>
-
+    <footer id="ended">
+        <button id="reload" class="btn btn-danger">Finalizar operacion</button>
     </footer>
 </body>
 </html>
